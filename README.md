@@ -22,3 +22,13 @@ I am going to use the required technologies in these ways.
 - **Serice**: Live updating weather forcast so that the user will be able to plan accordingly. Endpoints for login as well.
 - **DB/Login**: Register and log in users, securly store credentials in a database. 
 - **WebSocket**: The time within the day as well as the current date will be displayed on the main page. If development time permits, additionally users will be able to see a breakdown of how they usually spend their time, which will use their data to display pie charts.
+
+## Startup HTML
+I deployed the Simon HTML to my production enviroment, and I added...
+- My GitHub startup repository to the application's home page
+- HTML pages for each component of my application
+- Links between all the pages
+- A little textual content
+- A placeholder image for the icon
+- A login placeholder and user name display
+- And placeholders for database and WebSocket data
