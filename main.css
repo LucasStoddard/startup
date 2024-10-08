@@ -2,24 +2,35 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin: 0;
 }
 
 header {
-    height: 130px;
+    height: 150px;
+    padding-left: 12px;
+    padding-top: 4px;
     align-items: left;
     justify-content: space-around;
-    background: rgb(83, 83, 83);
+    background: rgb(7, 4, 36);
     color: rgb(224, 224, 224);
 }
 
+a:link, a:visited {
+    background-color: #00146e;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
 main {
+    min-height: 200px;
     flex: 70;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background: rgb(126, 126, 126);
+    background: rgb(0, 30, 68);
     color: rgb(250, 250, 250);
 }
 
@@ -31,6 +42,6 @@ footer {
     width: 100%;
     line-height: 0.5;
     align-items: center;
-    background: rgb(83, 83, 83);
+    background: rgb(7, 4, 36);
     color: rgb(224, 224, 224);
 }
