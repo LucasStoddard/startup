@@ -1,0 +1,16 @@
+main {
+    padding: 20px;
+}
+
+div {
+    background-color: transparent;
+}
+
+main h3 {
+    margin-top: 60px;
+}
+
+main h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}

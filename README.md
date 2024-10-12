@@ -32,3 +32,12 @@ I deployed the Simon HTML to my production enviroment, and I added...
 - A placeholder image for the icon
 - A login placeholder and user name display
 - And placeholders for database and WebSocket data
+
+## Startup CSS
+I deployed the Simon CSS to my production enviroment, and I added...
+- CSS header, footer, and main content style
+- CSS navigation elements in the form of buttons
+- Responsiveness to window resizing
+- CSS application elements in the form of panels
+- Styled text elements through margins, spacing, and color
+- CSS styled application images through margin adjustments and the usage of filters

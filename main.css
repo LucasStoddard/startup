@@ -50,6 +50,24 @@ div {
     transform-origin: top middle;
     display: grid;
     align-items: start;
-    margin-top: 12px;
-    top: 30px;
+    top: 40px;
+    background-color:  rgb(7, 4, 36);
 }
+
+div p {
+    margin-top: 10px;
+}
+
+div {
+    transform-origin: top middle;
+    display: grid;
+    align-items: start;
+    top: 40px;
+    background-color:  rgb(7, 4, 36);
+}
+
+img { 
+    margin-top: -8px;
+    filter: invert(1);
+}
+
