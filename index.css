@@ -2,8 +2,8 @@ main {
     padding: 20px;
 }
 
-div {
-    background-color: transparent;
+body {
+    color: rgb(0, 30, 68);   
 }
 
 main h3 {
