@@ -1,42 +1,117 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(0, 30, 68);   
+}
+
+header {
+  height: 165px;
+  padding-left: 14px;
+  padding-top: 4px;
+  align-items: left;
+  justify-content: space-around;
+  background: rgb(7, 4, 36);
+  color: rgb(224, 224, 224);
+}
+
+a:link, a:visited {
+  background-color: #00146e;
+  color: white;
+  padding: 5px 5px;
+  margin-right: 10px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: rgb(0, 30, 68);
+  color: rgb(250, 250, 250);   
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  padding: 8px;
+  padding-bottom: 15px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 1.5;
+  align-items: center;
+  background-color: rgb(7, 4, 36);
+  color: rgb(224, 224, 224);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+div {
+  transform-origin: top left;
+  display: grid;
+  align-items: start;
+  top: 40px;
+  width: 100%;
 }
 
-.card {
-  padding: 2em;
+div p {
+  margin-top: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+img { 
+  margin-top: -8px;
+  filter: invert(1);
 }
+
+.container {
+  display: flex;
+  justify-content: space-evenly; 
+  gap: 1vw; 
+  margin-top: 16px;
+  width: 100%;
+  align-self: center;
+  min-width: 97vw;
+  max-width: 99vw;
+}
+
+.box-container {
+  background-color: rgb(7, 4, 36); 
+  border-radius: 8px; 
+  padding: 10px; 
+  text-align: center; 
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 23vw;
+  max-width: 25vw;
+}
+
+.box-container-main {
+  background-color: rgb(7, 4, 36); 
+  border-radius: 8px; 
+  margin: 3vw;
+  max-height: 70vh;
+  padding: 10px; 
+  text-align: center; 
+  flex: 1;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+body {
+  background-color: rgb(0, 30, 68);   
+}
+
+header h1 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  margin-bottom: -3px;
+}
+
+header h3 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 300;
+}
+
