@@ -67,13 +67,23 @@ function Home() {
                 </div>
                 <button onClick={openDialog}>Create event</button>
             </div>
-            <div class="box-container center right">
+            <div class="box-container-other">
                 <h2>To Do</h2>
-                <p>Database Data will be inserted here eventually</p>
+                <div class="box-other">
+                    <div class="box-event">
+                        <h3>I have many things to do</h3>
+                        <p>^This is indeed true</p>
+                    </div>
+                </div>
             </div>
-            <div class="box-container right">
+            <div class="box-container-other">
                 <h2>Future events</h2>
-                <p>Database Data</p>
+                <div class="box-other">
+                    <div class="box-event">
+                        <h3>I have many events coming up</h3>
+                        <p>^Some of which are to sup</p>
+                    </div>
+                </div>
             </div>
 
             {isDialogOpen && (

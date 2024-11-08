@@ -101,7 +101,35 @@ img {
   align-self: center; 
 }
 
-.box-container-calendar {
+.box-container-other {
+  background-color: rgb(7, 4, 36); 
+  border-radius: 8px; 
+  padding: 10px; 
+  text-align: center; 
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 23vw;
+  max-width: 25vw;
+  height: calc(50vh - 139px);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-other {
+  background-color: rgb(0, 30, 68); 
+  border-radius: 8px; 
+  padding: 5px; 
+  text-align: center; 
+  flex: 1;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* In the future I may want to implement a min height such that the events don't get clipped when many are present */
+.box-container-calendar { 
   background-color: rgb(7, 4, 36); 
   border-radius: 8px; 
   padding: 10px; 
@@ -111,7 +139,7 @@ img {
   min-width: 23vw;
   max-width: 25vw;
   height: calc(100vh - 280px);
-  min-height: 160px;
+  min-height: 240px;
   display: flex;
   flex-direction: column;
 }
