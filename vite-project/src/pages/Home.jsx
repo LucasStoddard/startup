@@ -1,6 +1,21 @@
 import React from "react";
 
 class Home extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            isDialogOpen: false,
+        };
+    }
+    
+    openDialog = () => {
+        this.setState({ isDialogOpen: true });
+    };
+    
+    closeDialog = () => {
+        this.setState({ isDialogOpen: false });
+    };
+
     render() {
         return (
         <main>
@@ -12,9 +27,9 @@ class Home extends React.Component{
                 <div class="box-container-calendar">
                     <h2>Calendar</h2>
                     <div class="box-calendar">
-                        
+
                     </div>
-                    <button>Create event</button>
+                    <button onClick={this.openDialog}>Create event</button>
                 </div>
                 <div class="box-container center right">
                     <h2>TO DO</h2>
@@ -24,6 +39,31 @@ class Home extends React.Component{
                     <h2>Future events</h2>
                     <p>Database Data</p>
                 </div>
+
+                {this.state.isDialogOpen && (
+                    <div className="backdrop" onClick={this.closeDialog}></div>
+                )}
+                {this.state.isDialogOpen && (
+                <dialog open>
+                    <h3>Create New Event</h3>
+                    <form>
+                    <label>
+                        Event Name<br></br>
+                        <input type="text" name="eventName" />
+                    </label>
+                    <br />
+                    <label>
+                        Event Time<br></br>
+                        <input type="time" name="eventDate" />
+                    </label>
+                    <br />
+                    <button type="submit">Save</button>
+                    <button type="button" onClick={this.closeDialog}>
+                        Cancel
+                    </button>
+                    </form>
+                </dialog>
+                )}
             </div>
         </main>
         )
