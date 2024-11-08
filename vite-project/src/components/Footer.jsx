@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 
 class Footer extends React.Component {
     render() { 
@@ -6,7 +7,7 @@ class Footer extends React.Component {
             <footer>
                 <span class="text-reset">Lucas Stoddard</span>
                 <br></br>
-                <a href="https://github.com/LucasStoddard/startup">(GitHub)</a>
+                <Link to="https://github.com/LucasStoddard/startup">(GitHub)</Link>
             </footer>
         );
     }

@@ -1,0 +1,29 @@
+main {
+    padding: 40px;
+    align-items: center;
+}
+
+body {
+    color: rgb(34, 50, 70);   
+}
+
+main h3 {
+    margin-top: 60px;
+}
+
+main h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.box-container-main {
+    background-color: rgb(49, 40, 128); 
+    border-radius: 8px; 
+    margin: 10vw;
+    max-height: 70vh;
+    padding: 10px; 
+    text-align: center; 
+    flex: 1;
+    box-sizing: border-box;
+    align-self: center;
+  }
