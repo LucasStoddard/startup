@@ -11,6 +11,10 @@ class Home extends React.Component{
                 </div>
                 <div class="box-container-calendar">
                     <h2>Calendar</h2>
+                    <div class="box-calendar">
+                        
+                    </div>
+                    <button>Create event</button>
                 </div>
                 <div class="box-container center right">
                     <h2>TO DO</h2>
