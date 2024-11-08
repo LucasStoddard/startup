@@ -1,19 +1,18 @@
 import React from "react";
-import './Login.css';
 
 class Login extends React.Component{ // Having a slight problem with login.css
     render() {
         return (
-        <main class="box-container-main" >
+        <main class="box-container-login" >
             <h2>Login to PLANr</h2>
             <form method="get" action="/">
               <div>
-                <span>Username</span><br></br>
+                <span>Username</span>
                 <input type="text" placeholder="your@email.com" />
               </div>
               <br></br>
               <div>
-                <span>Password</span><br></br>
+                <span>Password</span>
                 <input type="password" placeholder="password" />
               </div>
               <br></br>

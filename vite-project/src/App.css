@@ -99,8 +99,46 @@ img {
   align-self: center;
 }
 
-body {
-  background-color: rgb(0, 30, 68);   
+.box-container-calendar {
+  background-color: rgb(7, 4, 36); 
+  border-radius: 8px; 
+  padding: 10px; 
+  text-align: center; 
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 23vw;
+  max-width: 25vw;
+  height: calc(100vh - 286px);
+  min-height: 23vw;
+}
+
+.box-container-login {
+  background-color: rgb(7, 4, 36); 
+  border-radius: 8px; 
+  margin: 16px;
+  max-height: 70vh;
+  padding: 20px; 
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
+  align-self: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-inline: 20px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+span {
+  text-align: left;
+}
+
+input {
+  width: 380px;
 }
 
 header h1 {
