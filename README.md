@@ -19,7 +19,7 @@ I am going to use the required technologies in these ways.
 - **HTML**: One HTML page for the application and one to log in. 
 - **CSS**: General styling that allows for ease of use on different screen sizes. Simple yet contrasting colors for the utility so that users have the greatest freedom in how their own schedule looks with their own selected color schemes.
 - **React**: There will be many UI elements because of the inherent customizability and interactivity between the user and their own plans, and react will help with all these aspects in helping provide a smooth experience for the user.
-- **Serice**: Live updating weather forcast so that the user will be able to plan accordingly. Endpoints for login as well.
+- **Service**: Live updating weather forcast so that the user will be able to plan accordingly. Endpoints for login as well.
 - **DB/Login**: Register and log in users, securly store credentials in a database. 
 - **WebSocket**: The time within the day as well as the current date will be displayed on the main page. If development time permits, additionally users will be able to see a breakdown of how they usually spend their time, which will use their data to display pie charts.
 
@@ -41,3 +41,14 @@ I deployed the Simon CSS to my production enviroment, and I added...
 - CSS application elements in the form of panels
 - Styled text elements through margins, spacing, and color
 - CSS styled application images through margin adjustments and the usage of filters
+
+## Startup React
+I deployed the Simon React to my production enviroment, and I added...
+- All of my previous code into stubbed components
+- An App.jsx that includes React Routers to navigate between pages
+- React components to allow for adding events into a calendar and dynamically display them in time order
+- React components to make the calendar significantly easier to use and more user friendly
+- React components to mock the functionality of a to do list and another section for future events
+- React hooks such as useState to allow for much cleaner and less class based code, which is what I initially used
+- A significant amount of formatting, styling, and development within every previous area of development
+- All bundled using Vite
