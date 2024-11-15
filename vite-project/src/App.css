@@ -60,11 +60,24 @@ div p {
   margin-top: 10px;
 }
 
-img { 
+header img { 
   border: 2px solid rgba(255, 255, 255, 0.7);
   margin-top: -12px;
   margin-right: 9px;
   margin-left: 3px;
+}
+
+.box-container-weather {
+  background-color: rgb(7, 4, 36); 
+  border-radius: 8px; 
+  padding: 10px; 
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 23vw;
+  max-width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {

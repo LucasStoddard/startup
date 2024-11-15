@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './Weather.css';
 
 // Weather, for simplicity for now I will just assume Provo
 const Weather = () => {
@@ -35,12 +36,12 @@ const Weather = () => {
 
     const { main, weather: weatherDetails } = weather;
     const temperature = main.temp;
-    const description = weatherDetails[0].description;
     const icon = weatherDetails[0].icon;
     
     return (
-        <div>
-            <p>testing</p>
+        <div class='weather-box'>
+            <img style={{ width: '180px', height: '180px'}} src={`https://openweathermap.org/img/wn/${icon}@4x.png`}/>
+            <p>Temperature: {temperature}°F</p>
         </div>
     )
 }

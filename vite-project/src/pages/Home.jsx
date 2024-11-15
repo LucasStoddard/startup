@@ -53,7 +53,7 @@ function Home() {
     return (
     <main>
         <div class="container">
-            <div class="box-container left">
+            <div class="box-container-weather">
                 <h2>Weather in Provo</h2>
                 <Weather />
             </div>
