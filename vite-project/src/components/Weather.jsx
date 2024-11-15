@@ -7,17 +7,17 @@ const Weather = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     
-    const API_KEY = "0f3892f5145efb8bc154a0840ca82bce"; 
-    const CITY = "Provo"; 
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=imperial`;
+    // const API_KEY = "0f3892f5145efb8bc154a0840ca82bce"; 
+    // const CITY = "Provo"; 
+    // const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=imperial`;
     
-    // Fetch weather data when the component mounts
+    // Fetch weather data
     useEffect(() => {
         const fetchWeatherData = async () => {
         try {
-            const response = await fetch(API_URL);
+            const response = await fetch('/weather');
             if (!response.ok) {
-            throw new Error("Failed to fetch weather data");
+                throw new Error("Failed to fetch weather data");
             }
             const data = await response.json();
             setWeather(data);
@@ -34,15 +34,24 @@ const Weather = () => {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
-    const { main, weather: weatherDetails } = weather;
-    const temperature = main.temp;
-    const icon = weatherDetails[0].icon;
+    // const { main, weather: weatherDetails } = weather;
+    // const temperature = main.temp;
+    // const icon = weatherDetails[0].icon;
     
     return (
         <div class='weather-box'>
-            <img style={{ width: '180px', height: '180px'}} src={`https://openweathermap.org/img/wn/${icon}@4x.png`}/>
-            <p>Temperature: {temperature}°F</p>
+            {/* <img style={{ width: '180px', height: '180px'}} src={`https://openweathermap.org/img/wn/${weather.icon}@4x.png`}/>
+            <p>Temperature: {weather.temp}°F</p> */}
+            {temperature ? (
+                <>
+                    <p>{temperature}°F</p>
+                    <img src={`https://openweathermap.org/img/wn/${icon}@4x.png`} alt="weather icon" />
+                </>
+            ) : (
+                <p>Loading...</p>
+            )}
         </div>
+        
     )
 }
 
