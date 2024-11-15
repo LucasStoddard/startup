@@ -8,7 +8,7 @@ body {
 header {
   height: 165px;
   padding-left: 14px;
-  padding-top: 4px;
+  padding-top: 2px;
   align-items: left;
   justify-content: space-around;
   background: rgb(7, 4, 36);
@@ -61,8 +61,10 @@ div p {
 }
 
 img { 
-  margin-top: -8px;
-  filter: invert(1);
+  border: 1px solid rgba(255, 255, 255, 0.507);
+  margin-top: -10px;
+  margin-right: 9px;
+  margin-left: 3px;
 }
 
 .container {
