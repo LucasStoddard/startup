@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import Weather from '../components/Weather';
 
 function Home() {
+    // Normal parts
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [events, setEvents] = useState({});
     const [eventName, setEventName] = useState("");
@@ -52,8 +54,8 @@ function Home() {
     <main>
         <div class="container">
             <div class="box-container left">
-                <h2>Weather</h2>
-                <p>WebSocket Data from a third party service</p>
+                <h2>Weather in Provo</h2>
+                <Weather />
             </div>
             <div class="box-container-calendar">
                 <h2>Calendar</h2>
@@ -112,6 +114,5 @@ function Home() {
     </main>
     )
 }
-
 
 export default Home;
