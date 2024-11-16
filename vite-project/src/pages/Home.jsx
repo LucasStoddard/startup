@@ -58,7 +58,7 @@ function Home() {
                 <h2>Weather in Provo</h2>
                 <Weather />
             </div>
-            <div className="box-container-calendar">
+            <div className="box-container-calendar">   
                 <h2>Calendar</h2>
                 <h4 id="calendar">Date failed to load</h4>
                 <div className="box-calendar">

@@ -1,16 +1,16 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 // const fetch = require('node-fetch');
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 
 app.use(express.static('public'));
 
 app.use(express.json());
 
 var apiRouter = express.Router();
-apiRouter.use(cors());
+// apiRouter.use(cors());
 app.use(`/api`, apiRouter);
 
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -18,7 +18,6 @@ const API_KEY = "0f3892f5145efb8bc154a0840ca82bce";
 apiRouter.get('/weather', async (_req, res) => {
     const city = _req.query.city || 'Provo';
     const url = `${API_URL}?q=${city}&appid=${API_KEY}&units=imperial`;
-    console.log('Fetching weather data from URL:', url);
     try {
         const response = await fetch(url);
         if (!response.ok) {
