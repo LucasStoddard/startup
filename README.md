@@ -52,3 +52,18 @@ I deployed the Simon React to my production enviroment, and I added...
 - React hooks such as useState to allow for much cleaner and less class based code, which is what I initially used
 - A significant amount of formatting, styling, and development within every previous area of development
 - All bundled using Vite
+
+## Startup Service
+I deployed the Simon Service to my production enviroment, and I added...
+- An HTTP service using Node.js and Express
+- My frontend served up using Express static middleware
+- Frontend calls to a third party service for the date on the Calendar
+- Frontend call to one of my service endpoints from the backend for the weather
+- Backend providing an endpoint to that frontend call for the weather
+<!-- end normal list -->
+Other Additions:
+- Handmade icon for banner to replace old temporary one
+- Icon added as the favicon in the browser tab
+- Name changed in browser tab as well
+- Recovered from pretty much the entire website exploding while trying to debug node stuff
+- Formatting adjustments, especially with the dialog box and buttons
