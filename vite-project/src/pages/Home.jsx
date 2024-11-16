@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Weather from '../components/Weather';
+import { getCurrentDate } from './date';
 
 function Home() {
     // Normal parts
@@ -59,6 +60,7 @@ function Home() {
             </div>
             <div className="box-container-calendar">
                 <h2>Calendar</h2>
+                <h4 id="calendar">Date failed to load</h4>
                 <div className="box-calendar">
                     {sortedEvents.map((tempEvent, index) => (
                         <div key={index} className="box-event">
