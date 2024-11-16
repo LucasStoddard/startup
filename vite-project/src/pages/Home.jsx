@@ -52,16 +52,16 @@ function Home() {
 
     return (
     <main>
-        <div class="container">
-            <div class="box-container-weather">
+        <div className="container">
+            <div className="box-container-weather">
                 <h2>Weather in Provo</h2>
                 <Weather />
             </div>
-            <div class="box-container-calendar">
+            <div className="box-container-calendar">
                 <h2>Calendar</h2>
-                <div class="box-calendar">
+                <div className="box-calendar">
                     {sortedEvents.map((tempEvent, index) => (
-                        <div key={index} class="box-event">
+                        <div key={index} className="box-event">
                             <h3>{tempEvent.name}</h3> 
                             <p>{tempEvent.time}</p> {/* May convert in the future to AM/PM but it seems like a nightmare to do */}
                         </div>
@@ -69,19 +69,19 @@ function Home() {
                 </div>
                 <button onClick={openDialog}>Create event</button>
             </div>
-            <div class="box-container-other">
+            <div className="box-container-other">
                 <h2>To Do</h2>
-                <div class="box-other">
-                    <div class="box-event">
+                <div className="box-other">
+                    <div className="box-event">
                         <h3>I have many things to do</h3>
                         <p>^This is indeed true</p>
                     </div>
                 </div>
             </div>
-            <div class="box-container-other">
+            <div className="box-container-other">
                 <h2>Future events</h2>
-                <div class="box-other">
-                    <div class="box-event">
+                <div className="box-other">
+                    <div className="box-event">
                         <h3>I have many events coming up</h3>
                         <p>^Some of which are to sup</p>
                     </div>
@@ -89,7 +89,7 @@ function Home() {
             </div>
 
             {isDialogOpen && (
-                <div class="backdrop" onClick={closeDialog}></div>
+                <div className="backdrop" onClick={closeDialog}></div>
             )}
             {isDialogOpen && (
             <dialog open>

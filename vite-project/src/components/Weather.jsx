@@ -14,18 +14,20 @@ const Weather = () => {
     // Fetch weather data when the component mounts
     useEffect(() => {
         const fetchWeatherData = async () => {
-        try {
-            const response = await fetch(API_URL);
-            if (!response.ok) {
-            throw new Error("Failed to fetch weather data");
+            try {
+                const response = await fetch('/weather');
+                if (!response.ok) {
+                    throw new Error("Failed to fetch weather data");
+                }
+                const data = await response.json();
+                console.log('Weather data:', data);  // Log to check
+                setWeather(data);
+            } catch (err) {
+                console.error(err);  // Log the actual error
+                setError(err.message);
+            } finally {
+                setLoading(false);
             }
-            const data = await response.json();
-            setWeather(data);
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
         };
     
         fetchWeatherData();
@@ -39,7 +41,7 @@ const Weather = () => {
     const icon = weatherDetails[0].icon;
     
     return (
-        <div class='weather-box'>
+        <div className='weather-box'>
             <img style={{ width: '180px', height: '180px'}} src={`https://openweathermap.org/img/wn/${icon}@4x.png`}/>
             <p>Temperature: {temperature}°F</p>
         </div>

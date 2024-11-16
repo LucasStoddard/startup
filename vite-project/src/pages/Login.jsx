@@ -2,7 +2,7 @@ import React from "react";
 
 function Login() {
     return (
-    <main class="box-container-login" >
+    <main className="box-container-login" >
         <h2>Login to PLANr</h2>
         <form method="get" action="/">
           <div>
