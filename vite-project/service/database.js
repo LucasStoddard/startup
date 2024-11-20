@@ -63,6 +63,8 @@ async function addEvent(score) {
 // Ambition: Actually storing a userEvents as {user: Events, ...} 
 // expands to {user: {time: (name, time), time: (name, time), ...}, user...}
 // so that users all have their own calendar
+// (The best way to do this would be with UUID as user so their token)
+// {userToken: {time: (name, time), time: (name, time), ...}, userToken...}
 
 // The best way I could think of this is making getCalendar 
 // return the events dictionary based upon the user, as well
@@ -70,6 +72,9 @@ async function addEvent(score) {
 
 // getHighScores -> getCalendar
 // This code DEFINITELY needs to change
+// query needs to include user
+// it shouldn't be eventCollection it should be calendarCollection which is the 
+// {user: {time: (name, time), time: (name, time), ...}, user...} dictionary
 function getCalendar() {
   const query = { score: { $gt: 0, $lt: 900 } };
   const options = {
