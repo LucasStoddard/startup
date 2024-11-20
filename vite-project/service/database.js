@@ -49,6 +49,25 @@ async function addEvent(score) {
   return eventCollection.insertOne(score);
 }
 
+// BREAKDOWN OF CALENDAR:
+// Each event
+  // name, time (str, str) [event.name, event.time] [eventName, eventTime]
+// events is like a dictionary
+  // {time: event, time: event} (str: (str, str), str: (str, str))
+// sortedEvents is an ordered list sorted by time (when it is generated) from events 
+  // [event, event, event] ((str, str), (str, str), (str, str))
+
+// Conclusion: We want to store events and call it so that it sorts
+// We also want adding an event to insert it into events
+
+// Ambition: Actually storing a userEvents as {user: Events, ...} 
+// expands to {user: {time: (name, time), time: (name, time), ...}, user...}
+// so that users all have their own calendar
+
+// The best way I could think of this is making getCalendar 
+// return the events dictionary based upon the user, as well
+// as addEvent to factor in the user
+
 // getHighScores -> getCalendar
 // This code DEFINITELY needs to change
 function getCalendar() {
