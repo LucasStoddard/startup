@@ -36,10 +36,15 @@ function Home() {
 
         const newEvent = { name: eventName, time: eventTime };
 
-        setEvents((prevEvents) => ({
-            ...prevEvents,
-            [eventTime]: newEvent,
-        }));
+        // setEvents((prevEvents) => ({
+        //     ...prevEvents,
+        //     [eventTime]: newEvent,
+        // }));
+        fetch('/api/event', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newScore),
+        });
         setEventName("");
         setEventTime("");
         setIsDialogOpen(false);

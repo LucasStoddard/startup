@@ -83,20 +83,20 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-// getHighScores -> getCalendar
+// getHighScores -> getEvents
 // addScore -> addEvent
 // MODIFY TO BE getCalendar
-secureApiRouter.get('/scores', async (req, res) => {
-    const scores = await DB.getHighScores();
-    res.send(scores);
+secureApiRouter.get('/events', async (req, res) => {
+    const events = await DB.getEvents();
+    res.send(events);
 });
 
-// MODIFY TO BE submitCalendar
-secureApiRouter.post('/score', async (req, res) => {
-    const score = { ...req.body, ip: req.ip };
-    await DB.addScore(score);
-    const scores = await DB.getHighScores();
-    res.send(scores);
+// MODIFY TO BE submitEvent
+secureApiRouter.post('/event', async (req, res) => {
+    const event = { ...req.body, ip: req.ip };
+    await DB.addEvent(event);
+    const events = await DB.getEvents();
+    res.send(events);
 });
   
 app.use(function (err, req, res, next) {
