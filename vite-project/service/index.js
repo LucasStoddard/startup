@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.set('trust proxy', true);
 
 var apiRouter = express.Router();
-// apiRouter.use(cors());
+
 app.use(`/api`, apiRouter);
 
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
