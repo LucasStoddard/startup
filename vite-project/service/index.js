@@ -93,9 +93,9 @@ secureApiRouter.get('/events', async (req, res) => {
 
 // MODIFY TO BE submitEvent
 secureApiRouter.post('/event', async (req, res) => {
-    const event = { ...req.body, ip: req.ip };
+    const {userid, event} = req.body
     await DB.addEvent(event);
-    const events = await DB.getEvents();
+    const events = await DB.getEvents(userid);
     res.send(events);
 });
   

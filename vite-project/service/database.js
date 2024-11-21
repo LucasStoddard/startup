@@ -32,8 +32,10 @@ function getUserByToken(token) {
 async function createUser(email, password) {
   // Hash the password before we insert it into the database
   const passwordHash = await bcrypt.hash(password, 10);
+  const userid = uuid.v4();
 
   const user = {
+    userid: userid,
     email: email,
     password: passwordHash,
     token: uuid.v4(),
@@ -45,8 +47,8 @@ async function createUser(email, password) {
 
 // addScore -> addEvent
 // scoreCollection -> eventCollection
-async function addEvent(score) {
-  return eventCollection.insertOne(score);
+async function addEvent(userid, event) {
+  return calendarCollection.updateOne({userid: userid}, {$push:{events:event}}, {upsert: true});
 }
 
 // BREAKDOWN OF CALENDAR:
@@ -81,7 +83,7 @@ function getCalendar() {
     sort: { score: -1 },
     limit: 10,
   };
-  const cursor = eventCollection.find(query, options);
+  const cursor = calendarCollection.find(query, options);
   return cursor.toArray();
 }
 

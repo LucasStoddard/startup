@@ -43,7 +43,7 @@ function Home() {
         fetch('/api/event', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(newScore),
+            body: JSON.stringify(newEvent),
         });
         setEventName("");
         setEventTime("");
