@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
-pp.use(cookieParser());
+app.use(cookieParser());
 
 app.set('trust proxy', true);
 

@@ -8,16 +8,15 @@ function Login() {
 
   const handleLogin = async (event) => {
       event.preventDefault();
+
+      const credentials = { email: username, password };
       try {
           const response = await fetch('/api/auth/login', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
               },
-              body: JSON.stringify({
-                  username,
-                  password,
-              }),
+              body: JSON.stringify(credentials),
           });
           if (response.ok) {
               const result = await response.json();
@@ -44,10 +43,7 @@ function Login() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                username,
-                password,
-            }),
+            body: JSON.stringify(newUser),
         });
 
         if (response.ok) {
