@@ -19,15 +19,17 @@ function App() { // Calendar leads to a different page, home page is just at bas
   const [authToken, setAuthToken] = useState(null);
   const [userid, setUserId] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUsername] = useState(null);
 
   // Check if the user is already logged in when the app loads
   useEffect(() => {
       const storedToken = localStorage.getItem('authToken');
       const storedUserid = localStorage.getItem('userid');
-      
+      const storedUsername = localStorage.getItem('userName');
       if (storedToken && storedUserid) {
           setAuthToken(storedToken);
           setUserId(storedUserid);
+          setUsername(storedUsername);
           setIsLoggedIn(true);
       }
   }, []);
@@ -35,8 +37,10 @@ function App() { // Calendar leads to a different page, home page is just at bas
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem('userid');
+    localStorage.removeItem('userName');
     setAuthToken(null);
     setUserId(null);
+    setUsername(null);
     setIsLoggedIn(false);
     window.location.href = '/login';  // Or redirect to home
   };

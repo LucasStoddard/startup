@@ -1,15 +1,22 @@
 import React from "react";
- import {useState} from "react";
+import {useState, useEffect} from "react";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
 
   const handleLogin = async (event) => {
       event.preventDefault();
 
-      const credentials = { email: username, password };
+      const credentials = { email: userName, password };
       try {
           const response = await fetch('/api/auth/login', {
               method: 'POST',
@@ -23,6 +30,8 @@ function Login() {
               console.log('Logged in:', result);
               localStorage.setItem('authToken', result.token);
               localStorage.setItem('userid', result.userid);
+              localStorage.setItem('userName', result.userName);
+              setUsername(result.userName);
               window.location.href = '/'; 
           } else {
               const result = await response.json();
@@ -36,7 +45,7 @@ function Login() {
   const handleCreate = async (event) => {
     event.preventDefault();  // Prevent the default form submission behavior
 
-    const newUser = { email: username, password };
+    const newUser = { email: userName, password };
     try {
         const response = await fetch('/api/auth/create', {
             method: 'POST',
@@ -49,6 +58,10 @@ function Login() {
         if (response.ok) {
             const result = await response.json();
             console.log('Account created successfully:', result);
+            localStorage.setItem('authToken', result.token);
+            localStorage.setItem('userid', result.userid);
+            localStorage.setItem('userName', result.userName);
+            setUsername(result.userName);
             window.location.href = '/';
         } else {
             const errorData = await response.json();
@@ -73,7 +86,7 @@ function Login() {
                   <input
                       type="username"
                       placeholder="username"
-                      value={username}
+                      value={userName}
                       onChange={handleUsernameChange}
                       required
                   />

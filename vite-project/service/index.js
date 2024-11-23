@@ -51,7 +51,7 @@ apiRouter.post('/auth/create', async (req, res) => {
       const user = await DB.createUser(req.body.email, req.body.password);
       setAuthCookie(res, user.token);
       res.send({
-        id: user._id,
+        id: user._id, userid: user.userid, userName: user.userName
       });
     }
 });
@@ -61,11 +61,11 @@ apiRouter.post('/auth/login', async (req, res) => {
     if (user) {
       if (await bcrypt.compare(req.body.password, user.password)) {
         setAuthCookie(res, user.token);
-        res.send({ id: user._id });
+        res.send({ id: user._id, userid: user.userid, userName: user.userName});
         return;
       }
     }
-    res.status(401).send({ msg: 'Unauthorized' });
+    res.status(401).send({ msg: 'Incorrect username / password' });
 });
   
 apiRouter.delete('/auth/logout', (_req, res) => {
