@@ -47,7 +47,7 @@ function App() { // Calendar leads to a different page, home page is just at bas
       <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <Routes>
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
-            <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
