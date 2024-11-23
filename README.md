@@ -67,3 +67,12 @@ Other Additions:
 - Name changed in browser tab as well
 - Recovered from pretty much the entire website exploding while trying to debug node stuff
 - Formatting adjustments, especially with the dialog box and buttons
+
+## Startup Login
+I deployed the Simon Login to my production enviroment, and I added...
+- Added MongoDB, which took an extremely long time
+- Made it so users can create accounts, upon which that data is stored within MongoDB
+- Made it so users can log in, making sure users cannot modify already existing accounts and so on with MongoDB
+- Made it so the application data such as userid is stored in MongoDB (different from the _id object)
+- Made it so the calendar is inaccessable unless the user logs in or creates a new account
+- Made it so credentials such as the username and password are stored in MongoDB, with the password being encrypted
