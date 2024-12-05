@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.set('trust proxy', true);
 
-var apiRouter = express.Router();
+const apiRouter = express.Router();
 
 app.use(`/api`, apiRouter);
 
