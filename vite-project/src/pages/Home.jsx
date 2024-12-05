@@ -81,7 +81,7 @@ function Home() {
 
         const newEvent = { name: eventName, time: eventTime };
 
-        setTodos((prevTodos) => ({
+        setTodo((prevTodos) => ({
             ...prevTodos,
             [eventTime]: newEvent,
         }));
@@ -105,7 +105,7 @@ function Home() {
 
         const newEvent = { name: eventName, time: eventTime };
 
-        setTodos((prevFutureEvents) => ({
+        setFutureEvents((prevFutureEvents) => ({
             ...prevFutureEvents,
             [eventTime]: newEvent,
         }));
@@ -125,13 +125,13 @@ function Home() {
         return timeA - timeB;
     });
 
-    const sortedTodo = Object.values(events).sort((a, b) => {
+    const sortedTodo = Object.values(todo).sort((a, b) => {
         const timeA = new Date(`1970-01-01T${a.time}:00`);
         const timeB = new Date(`1970-01-01T${b.time}:00`);
         return timeA - timeB;
     });
 
-    const sortedFutureEvents = Object.values(events).sort((a, b) => {
+    const sortedFutureEvents = Object.values(futureEvents).sort((a, b) => {
         const timeA = new Date(`1970-01-01T${a.time}:00`);
         const timeB = new Date(`1970-01-01T${b.time}:00`);
         return timeA - timeB;
@@ -179,7 +179,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <button onClick={openDialogEvent}>Create Future Event</button>
+                <button onClick={openDialogFutureEvents}>Create Future Event</button>
             </div>
             
             {isDialogOpenEvent && (
@@ -210,7 +210,7 @@ function Home() {
             )}
             {isDialogOpenTodo && (
             <dialog open>
-                <h3>Create New To Do Item</h3>
+                <h3>Create To Do Item</h3>
                 <form onSubmit={handleSaveTodo}>
                     <label>
                         To Do Name<br></br>
@@ -229,7 +229,7 @@ function Home() {
             )}
 
             {isDialogOpenFutureEvents && (
-                <div className="backdrop" onClick={closeDialogTodo}></div>
+                <div className="backdrop" onClick={closeDialogFutureEvents}></div>
             )}
             {isDialogOpenFutureEvents && (
             <dialog open>
@@ -246,7 +246,7 @@ function Home() {
                     </label>
                     <br />
                     <button type="submit">Save</button>
-                    <button type="button" onClick={closeDialogTodo}>Cancel</button>
+                    <button type="button" onClick={closeDialogFutureEvents}>Cancel</button>
                 </form>
             </dialog>
             )}
