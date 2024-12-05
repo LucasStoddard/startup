@@ -6,7 +6,7 @@ function Home() {
     // Normal parts
     const [isDialogOpenEvent, setIsDialogOpenEvent] = useState(false);
     const [isDialogOpenTodo, setIsDialogOpenTodo] = useState(false);
-    const [isDialogOpenFutureEvents, setIsDialogFutureEvents] = useState(false);    
+    const [isDialogOpenFutureEvents, setIsDialogOpenFutureEvents] = useState(false);    
     const [events, setEvents] = useState({});
     const [eventName, setEventName] = useState("");
     const [eventTime, setEventTime] = useState("");
@@ -146,7 +146,7 @@ function Home() {
             </div>
             <div className="box-container-calendar">   
                 <h2>Calendar</h2>
-                <h4 id="calendar">Date failed to load</h4>
+                <h4 id="calendar"></h4>
                 <div className="box-calendar">
                     {sortedEvents.map((tempEvent, index) => (
                         <div key={index} className="box-event">
