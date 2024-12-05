@@ -69,10 +69,28 @@ Other Additions:
 - Formatting adjustments, especially with the dialog box and buttons
 
 ## Startup Login
-I deployed the Simon Login to my production enviroment, and I added...
+I deployed the Simon Login to my production enviroment, and I...
 - Added MongoDB, which took an extremely long time
 - Made it so users can create accounts, upon which that data is stored within MongoDB
 - Made it so users can log in, making sure users cannot modify already existing accounts and so on with MongoDB
 - Made it so the application data such as userid is stored in MongoDB (different from the _id object)
 - Made it so the calendar is inaccessable unless the user logs in or creates a new account
 - Made it so credentials such as the username and password are stored in MongoDB, with the password being encrypted
+
+## Startup WebSocket
+I deployed the Simon WebSocket to my production enviroment, and I...
+- Made it so that my backend listens for a WebSocket connection
+- Made it so the frontend makes a WebSocket connection
+- Made it so data is sent over the WebSocket connection
+- Got all the visible elements working, which I will list below
+- By my own admission, I did not have the time due to finals to make it so the WebSocket data display
+in the application interface, and I decided it would be better for my program to be more functional
+and polished rather than have one extra WebSocket feature. I should get 0/20 in this reguard.
+<!-- end normal list -->
+Finishing Touches:
+- Many adjustments to features that weren't always working to work more consistently
+- Removal of at least one feature that just refused to work consistently (current date)
+- Addition of panel for to do items
+- To do panel functionality, including sorting by time and storing to do items separately from other panels
+- Addition of panel for future events
+- Future event panel functionality, including sorting by time and storing future events separately from other panels
