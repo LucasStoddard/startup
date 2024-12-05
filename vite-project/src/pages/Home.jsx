@@ -4,17 +4,22 @@ import { getCurrentDate } from './date';
 
 function Home() {
     // Normal parts
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isDialogOpenEvent, setIsDialogOpenEvent] = useState(false);
+    const [isDialogOpenTodo, setIsDialogOpenTodo] = useState(false);
+    const [isDialogOpenFutureEvents, FutureEvents] = useState(false);    
     const [events, setEvents] = useState({});
     const [eventName, setEventName] = useState("");
     const [eventTime, setEventTime] = useState("");
+    const [todo, setTodo] = useState({});
+    const [todoName, setTodoName] = useState("");
+    const [todoTime, settodoTime] = useState("");
 
-    const openDialog = () => {
-        setIsDialogOpen(true);
+    const openDialogEvent = () => {
+        setIsDialogOpenEvent(true);
     };
     
-    const closeDialog = () => {
-        setIsDialogOpen(false);
+    const closeDialogEvent = () => {
+        setIsDialogOpenEvent(false);
     };
 
     const handleInputChange = (tempEvent) => {
@@ -47,10 +52,22 @@ function Home() {
         // });
         setEventName("");
         setEventTime("");
-        setIsDialogOpen(false);
+        setIsDialogOpenEvent(false);
     }
 
     const sortedEvents = Object.values(events).sort((a, b) => {
+        const timeA = new Date(`1970-01-01T${a.time}:00`);
+        const timeB = new Date(`1970-01-01T${b.time}:00`);
+        return timeA - timeB;
+    });
+
+    const sortedTodo = Object.values(events).sort((a, b) => {
+        const timeA = new Date(`1970-01-01T${a.time}:00`);
+        const timeB = new Date(`1970-01-01T${b.time}:00`);
+        return timeA - timeB;
+    });
+
+    const sortedFutureEvents = Object.values(events).sort((a, b) => {
         const timeA = new Date(`1970-01-01T${a.time}:00`);
         const timeB = new Date(`1970-01-01T${b.time}:00`);
         return timeA - timeB;
@@ -70,35 +87,41 @@ function Home() {
                     {sortedEvents.map((tempEvent, index) => (
                         <div key={index} className="box-event">
                             <h3>{tempEvent.name}</h3> 
-                            <p>{tempEvent.time}</p> {/* May convert in the future to AM/PM but it seems like a nightmare to do */}
+                            <p>{tempEvent.time}</p>
                         </div>
                     ))}
                 </div>
-                <button onClick={openDialog}>Create event</button>
+                <button onClick={openDialogEvent}>Create event</button>
             </div>
-            <div className="box-container-other">
+            <div className="box-container-calendar">   
                 <h2>To Do</h2>
-                <div className="box-other">
-                    <div className="box-event">
-                        <h3>I have many things to do</h3>
-                        <p>^This is indeed true</p>
-                    </div>
+                <div className="box-calendar">
+                    {sortedTodo.map((tempEvent, index) => (
+                        <div key={index} className="box-event">
+                            <h3>{tempEvent.name}</h3> 
+                            <p>{tempEvent.time}</p> 
+                        </div>
+                    ))}
                 </div>
+                <button onClick={openDialogEvent}>Create To Do Item</button>
             </div>
-            <div className="box-container-other">
-                <h2>Future events</h2>
-                <div className="box-other">
-                    <div className="box-event">
-                        <h3>I have many events coming up</h3>
-                        <p>^Some of which are to sup</p>
-                    </div>
+            <div className="box-container-calendar">   
+                <h2>Future Events</h2>
+                <div className="box-calendar">
+                    {sortedFutureEvents.map((tempEvent, index) => (
+                        <div key={index} className="box-event">
+                            <h3>{tempEvent.name}</h3> 
+                            <p>{tempEvent.time}</p> 
+                        </div>
+                    ))}
                 </div>
+                <button onClick={openDialogEvent}>Create To Do Item</button>
             </div>
 
-            {isDialogOpen && (
+            {isDialogOpenEvent && (
                 <div className="backdrop" onClick={closeDialog}></div>
             )}
-            {isDialogOpen && (
+            {isDialogOpenEvent && (
             <dialog open>
                 <h3>Create New Event</h3>
                 <form onSubmit={handleSaveEvent}>
