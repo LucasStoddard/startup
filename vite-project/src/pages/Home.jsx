@@ -6,13 +6,13 @@ function Home() {
     // Normal parts
     const [isDialogOpenEvent, setIsDialogOpenEvent] = useState(false);
     const [isDialogOpenTodo, setIsDialogOpenTodo] = useState(false);
-    const [isDialogOpenFutureEvents, FutureEvents] = useState(false);    
+    const [isDialogOpenFutureEvents, setIsDialogFutureEvents] = useState(false);    
     const [events, setEvents] = useState({});
     const [eventName, setEventName] = useState("");
     const [eventTime, setEventTime] = useState("");
     const [todo, setTodo] = useState({});
-    const [todoName, setTodoName] = useState("");
-    const [todoTime, settodoTime] = useState("");
+    const [futureEvents, setFutureEvents] = useState({});
+
 
     const openDialogEvent = () => {
         setIsDialogOpenEvent(true);
@@ -20,6 +20,22 @@ function Home() {
     
     const closeDialogEvent = () => {
         setIsDialogOpenEvent(false);
+    };
+
+    const openDialogTodo = () => {
+        setIsDialogOpenTodo(true);
+    };
+    
+    const closeDialogTodo = () => {
+        setIsDialogOpenTodo(false);
+    };
+
+    const openDialogFutureEvents = () => {
+        setIsDialogOpenFutureEvents(true);
+    };
+    
+    const closeDialogFutureEvents = () => {
+        setIsDialogOpenFutureEvents(false);
     };
 
     const handleInputChange = (tempEvent) => {
@@ -53,6 +69,54 @@ function Home() {
         setEventName("");
         setEventTime("");
         setIsDialogOpenEvent(false);
+    }
+
+    const handleSaveTodo = (tempEvent) => {
+        tempEvent.preventDefault();
+
+        if (!eventName || !eventTime) {
+            alert("Please enter both to do name and time.");
+            return;
+        }
+
+        const newEvent = { name: eventName, time: eventTime };
+
+        setTodos((prevTodos) => ({
+            ...prevTodos,
+            [eventTime]: newEvent,
+        }));
+        // fetch('/api/event', {
+        //     method: 'POST',
+        //     headers: { 'content-type': 'application/json' },
+        //     body: JSON.stringify(newEvent),
+        // });
+        setEventName("");
+        setEventTime("");
+        setIsDialogOpenTodo(false);
+    }
+
+    const handleSaveFutureEvents = (tempEvent) => {
+        tempEvent.preventDefault();
+
+        if (!eventName || !eventTime) {
+            alert("Please enter both future name and time.");
+            return;
+        }
+
+        const newEvent = { name: eventName, time: eventTime };
+
+        setTodos((prevFutureEvents) => ({
+            ...prevFutureEvents,
+            [eventTime]: newEvent,
+        }));
+        // fetch('/api/event', {
+        //     method: 'POST',
+        //     headers: { 'content-type': 'application/json' },
+        //     body: JSON.stringify(newEvent),
+        // });
+        setEventName("");
+        setEventTime("");
+        setIsDialogOpenFutureEvents(false);
     }
 
     const sortedEvents = Object.values(events).sort((a, b) => {
@@ -103,7 +167,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <button onClick={openDialogEvent}>Create To Do Item</button>
+                <button onClick={openDialogTodo}>Create To Do Item</button>
             </div>
             <div className="box-container-calendar">   
                 <h2>Future Events</h2>
@@ -115,11 +179,11 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <button onClick={openDialogEvent}>Create To Do Item</button>
+                <button onClick={openDialogEvent}>Create Future Event</button>
             </div>
-
+            
             {isDialogOpenEvent && (
-                <div className="backdrop" onClick={closeDialog}></div>
+                <div className="backdrop" onClick={closeDialogEvent}></div>
             )}
             {isDialogOpenEvent && (
             <dialog open>
@@ -136,7 +200,53 @@ function Home() {
                     </label>
                     <br />
                     <button type="submit">Save</button>
-                    <button type="button" onClick={closeDialog}>Cancel</button>
+                    <button type="button" onClick={closeDialogEvent}>Cancel</button>
+                </form>
+            </dialog>
+            )}
+            
+            {isDialogOpenTodo && (
+                <div className="backdrop" onClick={closeDialogTodo}></div>
+            )}
+            {isDialogOpenTodo && (
+            <dialog open>
+                <h3>Create New To Do Item</h3>
+                <form onSubmit={handleSaveTodo}>
+                    <label>
+                        To Do Name<br></br>
+                        <input type="text" name="eventName" value={eventName} onChange={handleInputChange} />
+                    </label>
+                    <br />
+                    <label>
+                        To Do Time<br></br>
+                        <input type="time" name="eventTime" value={eventTime} onChange={handleInputChange} />
+                    </label>
+                    <br />
+                    <button type="submit">Save</button>
+                    <button type="button" onClick={closeDialogTodo}>Cancel</button>
+                </form>
+            </dialog>
+            )}
+
+            {isDialogOpenFutureEvents && (
+                <div className="backdrop" onClick={closeDialogTodo}></div>
+            )}
+            {isDialogOpenFutureEvents && (
+            <dialog open>
+                <h3>Create New Future Event</h3>
+                <form onSubmit={handleSaveFutureEvents}>
+                    <label>
+                        Future Event Name<br></br>
+                        <input type="text" name="eventName" value={eventName} onChange={handleInputChange} />
+                    </label>
+                    <br />
+                    <label>
+                        Future Event Time<br></br>
+                        <input type="time" name="eventTime" value={eventTime} onChange={handleInputChange} />
+                    </label>
+                    <br />
+                    <button type="submit">Save</button>
+                    <button type="button" onClick={closeDialogTodo}>Cancel</button>
                 </form>
             </dialog>
             )}
