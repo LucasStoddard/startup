@@ -155,7 +155,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <button onClick={openDialogEvent}>Create event</button>
+                <button onClick={openDialogEvent}>Create Event</button>
             </div>
             <div className="box-container-calendar">   
                 <h2>To Do</h2>
@@ -210,7 +210,7 @@ function Home() {
             )}
             {isDialogOpenTodo && (
             <dialog open>
-                <h3>Create To Do Item</h3>
+                <h3>Create New To Do Item</h3>
                 <form onSubmit={handleSaveTodo}>
                     <label>
                         To Do Name<br></br>
