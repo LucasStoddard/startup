@@ -143,7 +143,7 @@ header img {
   flex-direction: column;
   align-items: flex-start;
 }
-/* In the future I may want to implement a min height such that the events don't get clipped when many are present */
+
 .box-container-calendar { 
   background-color: rgb(7, 4, 36); 
   border-radius: 8px; 

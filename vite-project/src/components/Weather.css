@@ -6,6 +6,10 @@
 }
 
 .weather-box img {
-    margin-top: -20px;
+    margin-top: -30px;
     margin-bottom: -30px;
+}
+
+.weather-box p {
+    margin-bottom: 0px;
 }

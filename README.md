@@ -94,3 +94,4 @@ Finishing Touches:
 - To do panel functionality, including sorting by time and storing to do items separately from other panels
 - Addition of panel for future events
 - Future event panel functionality, including sorting by time and storing future events separately from other panels
+Thank you, I look forward to doing more web development in the future.
